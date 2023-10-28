@@ -1,6 +1,14 @@
 extends layout
-
 block content
   h1= title
-  p I am pursuing Masters in NWMSU.
-  <button type="button" class="btn btn-secondary">Press Me</button>
+  p Welcome to the #{title} server.
+  button(type="button",class="btn btn-secondary",onclick="goFaster()") Press Me  
+  #faster Increase The Speed
+  script.
+    var mph = 20;
+    var change = 1;
+    function goFaster(){
+      mph = mph + change;
+      change = change + 1;
+      document.getElementById('faster').textContent = `MPH ${mph} with change ${change}`
+    }
