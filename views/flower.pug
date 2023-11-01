@@ -2,18 +2,16 @@ extends layout
 block content
   h1= title
   p Welcome to the #{title} page 
-  -
-   let results = [
-    { flowerName: "Rose",flowerCost: 10, description: "Roses are red" },
-    { flowerName: "Sun flower",flowerCost: 04, description: "It follows the sun and have bright and radiating petals" },
-    { flowerName: "Tulip",flowerCost: 05, description: "symbolize for spring" }
-   ]
+  
+
   div.container-fluid
-    div.row
+
+   div.row
+    - let results = [{ flowerName: "Rose",flowerCost: 10, description: "Roses are red" },{ flowerName: "Sun flower",flowerCost: 04, description: "It follows the sun and have bright and radiating petals" },{ flowerName: "Tulip",flowerCost: 05, description: "symbolize for spring" }]
       each item in results
-        div.col-sm-2
-        h3 Flower Name: #{item.flowerName}
-        p Flower Cost: $#{item.flowerCost}
-        p Description: #{item.description}
+       div.col-sm-2
+         h3 Flower Name: #{item.flowerName}
+         p Flower Cost: $#{item.flowerCost}
+         p Description: #{item.description}
 
 
